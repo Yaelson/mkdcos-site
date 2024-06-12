@@ -1,0 +1,6 @@
+site_name: My Docs
+site_url: https://yaelson.github.io/mkdocs-site
+site_author: yaelson
+
+theme:
+  name: material
