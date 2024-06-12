@@ -8,7 +8,7 @@ on:
       - main
 
 permissions:
-  contents: read
+  contents: write
  
 jobs:
   deploy:
@@ -26,9 +26,9 @@ jobs:
           # cache-dependency-path: |
           #   pyproject.toml
           #   requirements.txt
-      - run:  echo "cache_id=$(date --utc '+%v')" >> $GITHUB_ENV
+      - run:  echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
       - name: Checkout cache
-        uses: action/cache@v3
+        uses: actions/cache@v3
         with:
           key: mkdocs-material-${{ env.cache_id }}
           path: .cache
